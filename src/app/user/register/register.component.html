@@ -1,0 +1,102 @@
+
+
+<h1>Register New Employee</h1>
+
+<div class="row backgroundWhite border">
+    <div class="col-md-12">
+        <form autocomplete="off" #form="ngForm" (submit)="register()" method="post">
+            <h4>Create a new account.</h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Name</label>
+                </div>
+                <div class="col-5">
+                    <input name="name" [(ngModel)]="formUser.name"  class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Email</label>
+                </div>
+                <div class="col-5">
+                    <input name="email" [(ngModel)]="formUser.email"  class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Phone Numberr</label>
+                </div>
+                <div class="col-5">
+                    <input name="phoneNumber" [(ngModel)]="formUser.phoneNumber"  class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Street Address</label>
+                </div>
+                <div class="col-5">
+                    <input name="streetAddress" [(ngModel)]="formUser.streetAddress"  class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>City</label>
+                </div>
+                <div class="col-5">
+                    <input name="city" [(ngModel)]="formUser.city"  class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>State</label>
+                </div>
+                <div class="col-5">
+                    <input name="state" [(ngModel)]="formUser.state"  class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>PostalCode</label>
+                </div>
+                <div class="col-5">
+                    <input name="postalCode" [(ngModel)]="formUser.postalCode"  class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Password</label>
+                </div>
+                <div class="col-5">
+                    <input type="password" name="password" [(ngModel)]="formUser.passwordHash"  class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label>Confirm Password</label>
+                </div>
+                <div class="col-5">
+                    <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword"  class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3"></div>
+                <div class="col-5">
+                    <input type="radio" [(ngModel)]="formUser.role" name="role" value="1" /> Admin
+                    <input type="radio" [(ngModel)]="formUser.role" name="role" value="2" checked /> Manager
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-5 offset-3">
+                    <button type="submit" class="btn btn-primary form-control">Register</button>
+                    <label class="text-danger" *ngIf="errorConfirm !=='' ">{{this.errorConfirm}}</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+

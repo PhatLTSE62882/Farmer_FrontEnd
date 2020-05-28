@@ -1,0 +1,18 @@
+<div class="login-form pt-4">
+    <form id="account" autocomplete="off" #form="ngForm" (submit)="login()" method="post">
+        <h2 class="text-center text-success"><b>Log in</b></h2>
+        <div class="form-group">
+            <input name="email" [(ngModel)]='this.loginForm.username' placeholder="Email..." class="form-control" />
+        </div>
+        <div class="form-group">
+            <input name="password" type="password" [(ngModel)]='this.loginForm.password' placeholder="Password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block">Log in</button>
+        </div>
+        <div class="text-center">
+            <a id="forgot-password" style="text-decoration:none;" routerLink="/forgot">Forgot your password?</a>
+        </div>
+    </form>
+</div>
+

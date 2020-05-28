@@ -1,0 +1,45 @@
+<br />
+<div class="border backgroundWhite">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-primary">Frequency List</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a routerLink="/editfrequency/0" class="btn btn-primary"><i class="fas fa-plus"></i>  &nbsp; Create New Frequency</a>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <table *ngIf="frequencyList" id="tblData" datatable="ng" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Frequency Count</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor = "let frequency of frequencyList">
+            <tr>
+                   <td  style="width:40%">{{frequency.name}}</td>
+                   <td style="width:20%">{{frequency.frequencyCount}}</td>
+                   <td>
+                        <div class="text-center">
+                                <a routerLink="/editfrequency/{{frequency.id}}"  class='btn btn-success text-white' style='cursor:pointer; width:100px;'>
+                                    <i class='far fa-edit'></i> Edit
+                                </a>
+                                &nbsp;
+                                <a (click)="delete(frequency.id)" class='btn btn-danger text-white' style='cursor:pointer; width:100px;'>
+                                    <i class='far fa-trash-alt'></i> Delete
+                                </a>
+                            </div>
+                   </td>
+            </tr>                            
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+
+

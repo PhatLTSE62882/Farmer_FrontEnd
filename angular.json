@@ -89,7 +89,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/lib/bootstrap/dist/css/bootstrap.css",
+              "src/assets/css/site.css"
             ],
             "scripts": []
           }
